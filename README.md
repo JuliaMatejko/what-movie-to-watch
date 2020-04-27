@@ -7,7 +7,7 @@ It will be possible to use one or more filters, i.e. year of production, rating,
 
 There will be an option to recommend one random movie from the given category.
 
-
+--------------------
 Applied responsive design with flexbox to enable comfortable usage for mobile users. 
 
 Live version (still under construction) :
