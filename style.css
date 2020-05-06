@@ -12,20 +12,27 @@ body {}
 }
 
 header {
+  display: flex;
   background: rgb(11, 8, 44);
   flex-shrink: 0;
   padding: 20px;
 }
 
 header a {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+margin-left: 0.25em;
 text-decoration: none;
 color: black;
-font-size: 3em;
-font-family: 'Caveat', cursive;
+text-shadow: -1px -1px 0 #141414, 1px -1px 0 #141414, -1px 1px 0 #141414, 1px 1px 0 #141414;
+font-weight: bold;
+font-size: 2.5em;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .topnav {
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(26, 22, 69);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -44,7 +51,7 @@ font-family: 'Caveat', cursive;
 
 a.mvright {float: right;}
 
-.topnav a:hover {background-color: lightgray; color: black;}
+.topnav a:hover {background-color:black; color: white;}
 
 .topnav a.active {background-color:black; color: white;}
 
@@ -72,7 +79,11 @@ a.mvright {float: right;}
   }
 }
 
-.content {background:#0e0e0e; flex: 1 0 auto;}
+.content {
+  background:black;
+  flex: 1 0 auto;
+  }
+  
 
 footer {
   flex-shrink: 0;
@@ -87,12 +98,15 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 100%;
+  background-image: linear-gradient(to bottom,rgb(0, 0, 0),rgb(0, 3, 34));
 }
 
 .topbar {
   width: 100%;
   text-align: right;
   display: flex;
+  height: 54.4px;
   
 }
 
@@ -100,6 +114,7 @@ footer {
   flex: 1 1 auto;
   font-size: 1.5em;
   font-family: 'Caveat', cursive;
+  color: rgb(177, 29, 152);
 }
 
 .topbar p:not(:first-child) {
@@ -111,31 +126,83 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 1em;
   font-size: 1.25em;
-  
+  flex: 1 1 auto;
+  background: rgba(206, 11, 250, 0.11);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(130, 102, 126);
 }
 
-.maybe {
-  font-size: 1.5em;
+.maybe-con {
+  font-size: 3em;
+  padding: 0em 1em 0 1em;
   font-family: 'Caveat', cursive;
+  background: -webkit-linear-gradient(rgb(172, 2, 50), rgb(5, 20, 182));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.maybe-con p {
+  max-width: 219.06px;
 }
 
 .screen {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid black;
+  border: 1px solid rgb(130, 102, 126);
   background-color: black;
-  width: 60vw;
   padding: 1em;
-  margin: 0.5em;
-  font-size: 1.25em;
+  font-size: 1.5em;
+  flex: 3 1 auto;
 }
 
 .homepage-content p {margin: 0.5em;}
 
-.screen p {text-align: center; color: white;}
+.screen p {
+  text-align: center;
+  color: lightgray;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.choose-con form {
+  -webkit-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.75);
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.048);
+  background: rgba(3, 3, 9, 0.26);
+}
+
+#generes {
+  width: 200px;
+  padding: 10px 20px;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(48, 15, 85);
+  color: lightgrey;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+}
+
+.fa-level-up-alt {
+  ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  padding: 0.25em;
+}
+
+.fa-search-plus {
+  padding: 0.25em;
+  ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.fa-arrow-circle-up {padding: 0.25em;}
 
 .btn {
   text-align: center;
@@ -146,6 +213,7 @@ footer {
   transition-duration: .4s;
   cursor: pointer;
   border: solid 1px lightgray;
+  border-radius: 4px;
 }
 
 .btn:hover {
@@ -156,32 +224,45 @@ footer {
 }
 
 .btn1-site {
-  background-color: black; color: white;}
+  background-color: black; color: gray; font-weight: bold;
+}
 
-.btn2-site {background-color: rgb(238, 215, 6); color: black;}
+.btn2-site {background-color: rgb(163, 126, 4); color: black;font-weight: bold;}
+
+
 
 .btn-draw {
-  width: 50px;
-  height: 50px;
-  background-color: green;
-  color: white;
+  width: 62px;
+  height: 62px;
+  background-color: rgb(172, 2, 50);
+  color:  rgb(99, 1, 29);
   border-radius: 50%;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border: 6px solid rgb(130, 102, 126);
+  font-weight: bold;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
 }
+
+.btn-draw:hover {
+  background: rgb(99, 1, 29);
+  color:rgb(130, 102, 126);
+  border: solid rgb(130, 102, 126);
+  }
 
 /* Subpage 'Movie Base' and 'My Movies' CSS */
 
 .wrapper {
   display: flex;
   justify-content: center;
-  background:#0e0e0e;
+  background:black;
 }
 
 .moviebase-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: #0e0e0e;
+  background: black;
   max-width: 1081px;
   padding: 0 0 8px 0;
 }
@@ -215,7 +296,7 @@ footer {
 align-items: stretch;}
 
 .container-bg:hover {
-  background-image: linear-gradient(to bottom right,rgb(172, 2, 50), rgb(5, 20, 182));
+  background-image: linear-gradient(to bottom right,rgb(171, 1, 49), rgb(5, 20, 182));
 }
 
 .title-box {
@@ -232,28 +313,41 @@ text-align: center; padding: 0 0.25em;}
 .movie-title, .movie-date-release {
   font-size: 1.5em;
   font-weight: 500;
-  font-family: 'Caveat', cursive;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.movie-original-title {color: gray; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+.movie-original-title {color: gray;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 .movie-director {
   display: flex;
   align-items: center;
   padding: 0.5em;
+  font-family: 'Caveat', cursive;
+  color: gray;
 }
 
 .director {
   margin-left: 0.25em;
   border-left: solid 1px lightgrey;
   padding: 0 0.25em;
-  }
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 0.85em;
+  color: rgb(80, 80, 80);
+}
 
-.movie-genere-box{}
+.movie-genere-box {
+  font-family: 'Caveat', cursive; 
+  color: gray;
+}
 
 .movie-genere-box span {
   border-left: solid 1px lightgrey;
   padding: 0 0.25em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(80, 80, 80);
+  font-size: 0.85em;
 }
 
 .rating-box {
@@ -261,9 +355,9 @@ text-align: center; padding: 0 0.25em;}
   flex-direction: column;
   justify-content: center;
   padding-left: 7px;
-  color: rgb(80, 80, 80);
+  color: gray;
   border-left: 1px solid lightgrey;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Caveat', cursive;
   }
 
 .moreinfo-btn {
@@ -271,8 +365,8 @@ text-align: center; padding: 0 0.25em;}
   flex-direction: column;
   align-items: center;
   padding: 1px;
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
   font-weight: bold;
   color: rgb(80, 80, 80);
   background: whitesmoke;
@@ -303,13 +397,13 @@ text-align: center; padding: 0 0.25em;}
   border: 1px solid rgb(80, 80, 80);
   border-radius: 3px;
   font-weight: bold;
+  width: auto;
+  margin: 0.25em 0;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: dodgerblue;
+  background-image: linear-gradient(to top right,rgb(180, 40, 80), rgba(5, 20, 182));
 }
-
-#addMovieBtn {width: auto;}
 
 .fa-plus {
   font-size: 0.85em;
@@ -318,7 +412,7 @@ text-align: center; padding: 0 0.25em;}
 .dropdown {
   width: 100%;
   text-align: center;
-  background: #0e0e0e;
+  background: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -339,9 +433,12 @@ text-align: center; padding: 0 0.25em;}
 .dropdownContent {
   text-align: left;
   display: none;
-  background: #0e0e0e;
+  background:rgb(80, 80, 80);
   overflow: auto;
   padding: 0.5em;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin: 0.5em;
 }
 
 .show {display:block;}
@@ -367,8 +464,8 @@ text-align: center; padding: 0 0.25em;}
 }
 
 .pagination a {
-  background-color: #0e0e0e;
-  border: solid 3px #0e0e0e;
+  background-color: black;
+  border: solid 3px black;
   color: white;
   float: left;
   text-decoration: none;
@@ -488,38 +585,37 @@ text-align: center; padding: 0 0.25em;}
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: rgb(80, 80, 80);
   border-right: 1px solid lightgrey;
-  
 }
 
 .my-rating {
-  background: rgb(130, 171, 233); color: rgb(35, 83, 155);
+  background: rgb(61, 11, 119);
+  color: white;
 }
 
 .myrating-btn {
   width: 70px;
   height: 70px;
   margin: 0.25em 0.5em 0.25em 0;
-  
 }
 
 .my-review-btn {
   width: 70px;
   height: 70px;
   margin: 0.25em 0.5em 0.25em 0;
-  font-weight: 600;
-  color: rgb(80, 80, 80);
+  color: rgb(61, 11, 119);
   padding: 0.4em;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   background: whitesmoke;
+  font-family: 'Caveat', cursive;
+  font-size: 1em;
 }
 
+.myrating-btn:focus, .my-review-btn:focus {
+  color: white;
+  background-image: linear-gradient(to top right,rgb(180, 40, 80), rgba(5, 20, 182));
+}
 
-
-
-
-
-
-
+.fa-angle-down {padding: 0 0 0 0.25em;}
