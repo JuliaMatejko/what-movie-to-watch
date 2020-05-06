@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What mOvie to watch?</title>
+    <title>What movie to watch?</title>
     <meta name="description" content="The Best Site On The Web* When You Don't Know What To Watch.                                *voted by my cat">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/19f562be58.js" crossorigin="anonymous"></script>
@@ -13,11 +13,11 @@
   <body>
     <script src="script.js"></script>
     <div class="row">
-      <header><a href='index.php?id=home'>What MOvie To Watch?</a></header>
+      <header><img src="/static/wmtwlogo.png" alt="website logo" style="width:125.53px;height:80px;"><a href='index.php?id=home'>What Movie To Watch?</a></header>
       <div class="topnav" id="myTopnav">
-        <a href='index.php?id=home'>Home</a>
+        <a href='index.php?id=home' class="active">Home</a>
         <a href='index.php?id=mymovies' class="mvright">My Movies</a>
-        <a href='index.php?id=moviebase' class="mvright active"><i class="fas fa-film"></i> Movie Base</a>
+        <a href='index.php?id=moviebase' class="mvright"><i class="fas fa-film"></i> Movie Base</a>
         <a href='index.php?id=about'>About</a>
         <a href="javascript:void(0);" class="icon" onclick="navResponse()">
           <i class="fa fa-bars"></i>
