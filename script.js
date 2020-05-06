@@ -15,5 +15,3 @@ function openDropdown(tabName) {
   }
   document.getElementById(tabName).style.display = "block";
 }
-
-
