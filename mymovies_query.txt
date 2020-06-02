@@ -1,0 +1,33 @@
+--for my movies selection
+
+$s = 
+
+select * from my_movies 
+[where [((my_rating >= $minvalue) and (my_rating <= $maxvalue))]
+  [AND date_trunc('day', my_rating_datetime) between $datestart and $dateend]
+  [AND favourite = '$fav_torf']      TRUE or FALSE
+  [AND to_watch = '$tw_torf']
+  [AND my_review is null | is not null]
+  [[AND movie_id in (select movie_id from movies
+	           where 
+      	             year between $year_start and $year_end]
+                     [AND movie_id in (select movie_id from movies_directors
+	                              where director_id in (select director_id from directors 
+    				                            where first_name like INITCAP('$ciągznakówusera')
+    				                              AND last_name like INITCAP('$ciągznakówusera')))]]
+                     [[AND movie_id in (select movie_id from movies_actors
+	                              where actor_id in (select actor_id from actors 
+    				                         where first_name like INITCAP('$ciągznakówusera')]
+    				                           [AND last_name like INITCAP('$ciągznakówusera'))))]]
+                     [[AND movie_id in (select movie_id from movies_genres
+	                              where $g [genre in ('$checked', '$values', '$from', '$the', '$form',...)))]  loose selection
+		                               [genre='$checked' and genre='$values'and genre='$from' and genre='$the' and genre='$form' and ...))]] strict selection
+      		     [[AND movie_id in (select movie_id from movies_keywords
+					where $k [keyword in ('$checked', '$values', '$from', '$the', '$form',...))]  loose selection
+		                		 [keyword='$checked' and keyword='$values'and keyword='$from' and keyword='$the' and keyword='$form' and ...)]]  strict selection
+$o = 
+                                           $col                           $ord
+[order by $x ] ]    $x = [movie_title|year|my_rating|my_rating_date_time] [asc|desc];
+                                          $x="$col"." "."$ord"
+$q = "$s"." "."$o"
+
