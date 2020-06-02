@@ -1,0 +1,32 @@
+select * movies where genre in genres
+
+$genre = "'".$_POST['genres']."'";
+
+
+--for moviebase selection
+$s = 
+
+select * from movies
+[where[year between $year_start and $year_end]
+      [AND ((rating_imdb >= $minvalue) and (rating_imdb <= $maxvalue)) AND ((rating_filmweb >= $minvalue) and (rating_filmweb <= $maxvalue))]
+      [AND movie_id in (select movie_id from movies_directors
+	               where director_id in (select director_id from directors 
+    				             [where first_name like INITCAP('$ciągznakówusera')]
+    				                   [AND last_name like INITCAP('$ciągznakówusera')]))]
+      [AND movie_id in (select movie_id from movies_actors
+	               where actor_id in (select actor_id from actors 
+    				             where [first_name like INITCAP('$ciągznakówusera')]
+    				                   [AND last_name like INITCAP('$ciągznakówusera')]))]
+      [AND movie_id in (select movie_id from movies_genres
+	               where $g [genre in ('$checked', '$values', '$from', '$the', '$form',...))]  loose selection
+		                [genre='$checked' and genre='$values'and genre='$from' and genre='$the' and genre='$form' and ...)]]  strict selection
+      [AND movie_id in (select movie_id from movies_keywords
+			where $k [keyword in (LOWER('$checked'), '$values', '$from', '$the', '$form',...))]  loose selection
+		                [keyword=LOWER('$checked') and keyword='$values'and keyword='$from' and keyword='$the' and keyword='$form' and ...)]]  strict selection
+
+$o = 
+                                           $col                                             $ord
+[order by $x]      $x = [movie_title|original_title|year|rating_imdb|rating_filmweb] [asc|desc];
+                                          $x="$col"." "."$ord"
+$q = "$s"." "."$o"
+
