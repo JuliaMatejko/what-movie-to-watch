@@ -7,11 +7,16 @@ function navResponse() {
   }
 }
 
-function openDropdown(tabName) {
+function openDropdown(dropdownName) {
   var i, x;
   x = document.getElementsByClassName("dropdownContent");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  document.getElementById(tabName).style.display = "block";
+  document.getElementById(dropdownName).style.display = "flex";
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
